@@ -1,6 +1,6 @@
-describe('home page'),
+describe("home page"),
   () => {
-    it('', () => {
-      cy.visit('http://localhost:3000/');
+    it("", () => {
+      cy.visit("http://localhost:3000/");
     });
   };

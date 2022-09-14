@@ -1,14 +1,14 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import HomePage from '../pages/index';
+import HomePage from "../pages/index";
 
 export default {
-  title: 'Pages/Home',
+  title: "Pages/Home",
   component: HomePage,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as ComponentMeta<typeof HomePage>;
 
