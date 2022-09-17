@@ -1,3 +1,6 @@
+import React from "react";
+import { GlobalStyle } from "../styles/GlobalStyle";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +10,13 @@ export const parameters = {
     },
   },
 };
+
+// added by me to add global styles to storybook
+export const decorators = [
+  (Story) => (
+    <>
+      <GlobalStyle />
+      <Story />
+    </>
+  ),
+];
