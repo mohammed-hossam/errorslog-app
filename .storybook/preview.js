@@ -5,6 +5,7 @@ import { NavigationProvider } from "../components/SidebarNavigation/navigation-c
 import { ThemeProvider } from "styled-components";
 import { theme } from "@styles/theme";
 
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

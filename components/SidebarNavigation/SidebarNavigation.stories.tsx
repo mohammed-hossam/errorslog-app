@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SidebarNavigation } from "./SidebarNavigation";
 import { Routes } from "@config/routes";
 
+
 export default {
   title: "UI/SidebarNavigation",
   component: SidebarNavigation,

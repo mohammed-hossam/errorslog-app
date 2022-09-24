@@ -12,6 +12,7 @@ const menuItems = [
     text: "Projects",
     iconSrc: "/icons/projects.svg",
     href: Routes.projects,
+
   },
   {
     text: "Issues",
@@ -86,6 +87,7 @@ export function SidebarNavigation() {
     </Nav>
   );
 }
+
 
 const Nav = styled.nav<{ isSidebarCollapsed: boolean }>`
   /* height: calc(100vh - 2 * 32px); */
