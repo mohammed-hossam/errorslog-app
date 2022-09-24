@@ -4,15 +4,21 @@ type MenuItemButtonProps = {
   text: string;
   iconSrc: string;
   onClick: () => void;
+  isSidebarCollapsed: boolean;
 };
 
-function MenuItemButton({ text, iconSrc, onClick }: MenuItemButtonProps) {
+function MenuItemButton({
+  text,
+  iconSrc,
+  onClick,
+  isSidebarCollapsed,
+}: MenuItemButtonProps) {
   //   console.log(iconSrc);
   return (
     <ListItem>
       <Button onClick={onClick}>
         <Icon src={iconSrc} alt={`${text} icon`} />
-        {text}
+        {!isSidebarCollapsed ? text : ""}
       </Button>
     </ListItem>
   );
