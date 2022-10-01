@@ -41,7 +41,7 @@ describe("Sidebar Navigation", () => {
     });
   });
 
-  context.only("mobile resolution", () => {
+  context("mobile resolution", () => {
     beforeEach(() => {
       cy.viewport("iphone-8");
     });
