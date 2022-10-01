@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import { Button } from "@components/Button";
+// import styled from "styled-components";
+import { ListItem, Anchor, Icon } from "./MenuItemLink";
 
 type MenuItemButtonProps = {
+  className?: string;
   text: string;
   iconSrc: string;
   onClick: () => void;
@@ -8,6 +11,7 @@ type MenuItemButtonProps = {
 };
 
 function MenuItemButton({
+  className,
   text,
   iconSrc,
   onClick,
@@ -15,33 +19,21 @@ function MenuItemButton({
 }: MenuItemButtonProps) {
   //   console.log(iconSrc);
   return (
-    <ListItem>
-      <Button onClick={onClick}>
+    <ListItem className={className}>
+      <Anchor as={Button} onClick={onClick}>
         <Icon src={iconSrc} alt={`${text} icon`} />
         {!isSidebarCollapsed ? text : ""}
-      </Button>
+      </Anchor>
     </ListItem>
   );
 }
 
-const ListItem = styled.li`
-  padding: 8px 12px;
-`;
-const Button = styled.button`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  //reset some default button css
-  background-color: transparent;
-  border: none;
-  line-height: normal;
-  margin: 0;
-  padding: 0;
-`;
-const Icon = styled.img`
-  margin-right: 12px;
-`;
+// const ListItem = styled.li`
+//   padding: 8px 12px;
+// `;
+
+// const Icon = styled.img`
+//   margin-right: 12px;
+// `;
 
 export default MenuItemButton;
