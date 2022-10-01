@@ -1,3 +1,68 @@
+type Color = {
+  25: string;
+  50: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+  800: string;
+  900: string;
+};
+
+type Font = {
+  regular: string;
+  medium: string;
+  semibold: string;
+};
+
+export type Theme = {
+  color: {
+    gray: Color;
+    primary: Color;
+    error: Color;
+    warning: Color;
+    success: Color;
+  };
+  space: {
+    0: string;
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    5: string;
+    6: string;
+    8: string;
+    10: string;
+    12: string;
+    16: string;
+    20: string;
+    24: string;
+  };
+  size: {
+    headerHeight: string;
+  };
+  breakpoint: {
+    desktop: string;
+  };
+  zIndex: {
+    header: number;
+  };
+  font: {
+    text: {
+      xs: Font;
+      sm: Font;
+      md: Font;
+    };
+    display: {
+      sm: Font;
+      md: Font;
+    };
+  };
+};
+
 export const theme = {
   color: {
     gray: {
@@ -81,4 +146,140 @@ export const theme = {
     20: "5rem",
     24: "6rem",
   },
+  size: {
+    headerHeight: "4rem",
+  },
+  breakpoint: {
+    desktop: "64em",
+  },
+  zIndex: {
+    header: 1000,
+  },
+  font: {
+    text: {
+      xs: {
+        regular: `
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+          font-weight: 400;
+        `,
+        medium: `
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+          font-weight: 500;
+        `,
+        semibold: `
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+          font-weight: 600;
+        `,
+      },
+      sm: {
+        regular: `
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 400;
+        `,
+        medium: `
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 500;
+        `,
+        semibold: `
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 600;
+        `,
+      },
+      md: {
+        regular: `
+          font-size: 1rem;
+          line-height: 1.5rem;
+          font-weight: 400;
+        `,
+        medium: `
+          font-size: 1rem;
+          line-height: 1.5rem;
+          font-weight: 500;
+        `,
+        semibold: `
+          font-size: 1rem;
+          line-height: 1.5rem;
+          font-weight: 600;
+        `,
+      },
+    },
+    display: {
+      sm: {
+        regular: `
+          font-size: 1.875rem;
+          line-height: 2.375rem;
+          font-weight: 400;
+        `,
+        medium: `
+          font-size: 1.875rem;
+          line-height: 2.375rem;
+          font-weight: 500;
+        `,
+        semibold: `
+          font-size: 1.875rem;
+          line-height: 2.375rem;
+          font-weight: 600;
+        `,
+      },
+      md: {
+        regular: `
+          font-size: 2.25rem;
+          line-height: 2.75rem;
+          font-weight: 400;
+        `,
+        medium: `
+          font-size: 2.25rem;
+          line-height: 2.75rem;
+          font-weight: 500;
+        `,
+        semibold: `
+          font-size: 2.25rem;
+          line-height: 2.75rem;
+          font-weight: 600;
+        `,
+      },
+    },
+  },
 };
+
+export function color(
+  name: keyof Theme["color"],
+  shade: keyof Theme["color"]["gray"]
+) {
+  return ({ theme }: { theme: Theme }) => theme.color[name][shade];
+}
+
+export function space(...names: Array<keyof Theme["space"]>) {
+  return ({ theme }: { theme: Theme }) => {
+    const spaces = names.map((name) => theme.space[name]);
+    return spaces.join(" ");
+  };
+}
+
+export function breakpoint(name: keyof Theme["breakpoint"]) {
+  return ({ theme }: { theme: Theme }) => theme.breakpoint[name];
+}
+
+export function zIndex(name: keyof Theme["zIndex"]) {
+  return ({ theme }: { theme: Theme }) => theme.zIndex[name];
+}
+
+export function textFont(
+  size: keyof Theme["font"]["text"],
+  weight: keyof Theme["font"]["text"]["sm"]
+) {
+  return ({ theme }: { theme: Theme }) => theme.font.text[size][weight];
+}
+
+export function displayFont(
+  size: keyof Theme["font"]["display"],
+  weight: keyof Theme["font"]["display"]["sm"]
+) {
+  return ({ theme }: { theme: Theme }) => theme.font.display[size][weight];
+}
