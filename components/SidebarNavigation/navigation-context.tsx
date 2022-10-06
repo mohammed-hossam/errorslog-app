@@ -15,7 +15,9 @@ type NavigationContextType = {
 const defaultContext: NavigationContextType = {
   isSidebarCollapsed: false,
   // setSidebarCollapsed: () => null,
-  toggleSidebar: () => {},
+  toggleSidebar: () => {
+    return;
+  },
 };
 
 export const NavigationContext = createContext(defaultContext);
