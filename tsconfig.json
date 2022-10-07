@@ -17,7 +17,8 @@
     "paths": {
       "@styles/*": ["styles/*"],
       "@config/*": ["config/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@features/*": ["features/*"]
     },
     "noEmit": true
   },
