@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ProjectLanguage, ProjectsCard, ProjectStatus } from "./ProjectsCard";
-import { Routes } from "@config/routes";
 
 export default {
   title: "Projects/ProjectsCard",

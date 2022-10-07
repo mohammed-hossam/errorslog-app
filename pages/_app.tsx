@@ -3,6 +3,10 @@ import { NavigationProvider } from "@components/SidebarNavigation/navigation-con
 import { GlobalStyle } from "@styles/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@styles/theme";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <NavigationProvider>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+            <ReactQueryDevtools initialIsOpen={false} />
+          </QueryClientProvider>
         </NavigationProvider>
       </ThemeProvider>
     </>

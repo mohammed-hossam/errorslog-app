@@ -74,7 +74,11 @@ export function SidebarNavigation() {
               <MenuItemLink
                 key={i}
                 {...menuItem}
-                isActive={router.pathname === menuItem.href}
+                isActive={
+                  router.pathname === menuItem.href ||
+                  (router.pathname === "/dashboard" &&
+                    menuItem.text === "Projects")
+                }
                 isSidebarCollapsed={isSidebarCollapsed}
               />
             );
