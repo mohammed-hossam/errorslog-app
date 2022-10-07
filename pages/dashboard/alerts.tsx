@@ -1,12 +1,12 @@
 import React from "react";
-import { SidebarNavigation } from "../../components/SidebarNavigation";
+import { Layout } from "@components/Layout";
 // type Props = {}
 
 function AlertsPage() {
   return (
-    <div>
-      <SidebarNavigation />
-    </div>
+    <Layout title="welcome" info="welcome">
+      welcome
+    </Layout>
   );
 }
 
