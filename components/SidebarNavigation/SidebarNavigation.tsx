@@ -44,7 +44,7 @@ export function SidebarNavigation() {
   const router = useRouter();
   // console.log(router);
   return (
-    <Container isSidebarCollapsed={isSidebarCollapsed}>
+    <FixedContainer>
       <Header isSidebarCollapsed={isSidebarCollapsed}>
         <Logo
           isSidebarCollapsed={isSidebarCollapsed}
@@ -100,7 +100,7 @@ export function SidebarNavigation() {
           />
         </Ul>
       </Nav>
-    </Container>
+    </FixedContainer>
   );
 }
 
@@ -115,10 +115,13 @@ const containerStyles = css`
   }
 `;
 
-const Container = styled.div<{ isSidebarCollapsed: boolean }>`
+const FixedContainer = styled.div`
   ${containerStyles}
+  position: fixed;
+  @media (min-width: ${breakpoint("desktop")}) {
+    position: relative;
+  }
 `;
-
 const Header = styled.header<{ isSidebarCollapsed: boolean }>`
   /* background-color: ${({ theme }) => theme.color.gray[900]}; */
   box-sizing: border-box;
