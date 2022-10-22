@@ -64,3 +64,18 @@ describe("Sidebar Navigation", () => {
 });
 
 export {};
+
+// contains
+// Get the DOM element containing the text. DOM elements can contain more than the desired text and still match. Additionally, Cypress prefers some DOM elements over the deepest element found.
+
+// Get
+// Get one or more DOM elements by selector or alias.
+// Since cy.get() is chained off of cy, it always looks for the selector within the entire document. The only exception is when used inside a .within() command.
+// The cy.get command always starts its search from the cy.root element. In most cases, it is the document element, unless used inside the .within() command. The .find command starts its search from the current subject.
+
+// find
+// .find() yields the new DOM element(s) it found.
+// .find() requires being chained off a command that yields DOM element(s).
+
+// within
+// Scopes all subsequent cy commands to within this element. Useful when working within a particular group of elements such as a <form>.
