@@ -1,11 +1,15 @@
 import React from "react";
 import { Layout } from "@components/Layout";
+import { IssuesList } from "@features/issues";
 // type Props = {}
 
 function IssuesPage() {
   return (
-    <Layout title="welcome" info="welcome">
-      welcome
+    <Layout
+      title="Issues"
+      info="Overview of errors, warnings, and events logged from your projects."
+    >
+      <IssuesList />
     </Layout>
   );
 }
